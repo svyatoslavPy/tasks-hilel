@@ -2,7 +2,7 @@
 
 let numbers = 123456; // return type number
 let nameSchool = "IT School 'Hillel'"; // return type string
-let boolean = true; // return boolean
+let boolean = false; // return boolean
 
 // variable typeof
 let resultNumbers = typeof numbers; // number
