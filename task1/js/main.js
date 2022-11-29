@@ -13,6 +13,6 @@ console.log('value: ', numbers + '; ', 'type: ', resultNumbers + ';'); // result
 console.log('value: ', nameSchool + '; ', 'type: ', resultNameschool + ';'); // result nameSchool value and type
 console.log('value: ', boolean + '; ', 'type: ', resultBoolean + ';'); // result boolean value and type
 
-
+alert('Hello World'); // alert hello world
 
 
