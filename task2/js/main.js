@@ -2,7 +2,7 @@
 const number = 8; // variable const number
 let numberTwo = +prompt('Enter to number: ');
 let lenghtWord = prompt('Enter to word: ');
-let floatNumber = 0.51000002.toFixed(2);
+let floatNumber = +0.51000002.toFixed(2);
 
 // string word 
 const str = 'the quick brown fox jumps over the lazy dogs back'; // str
