@@ -47,7 +47,7 @@ let numberRandom = 0; // variable - number with random
 let iteration = 0; // i
 
 while (true) {
-	numberRandom = Math.random(); // math random - function with random numbers
+	numberRandom = +Math.random().toFixed(1.5); // math random - function with random numbers
 	iteration++; // i + 1
 
 	if (numberRandom > 0.7) { // if
