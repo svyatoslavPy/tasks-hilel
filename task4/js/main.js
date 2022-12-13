@@ -20,9 +20,12 @@ let copyArr = []; // copyarr
 
 for (let i = 0; i < number; i++) {
 	arrNumber[i] = (Math.floor(Math.random() * 10));
-	copyArr = Object.assign([], arrNumber);
+}
 
-	if ((i+1) % 3) {
+copyArr = Object.assign([], arrNumber);
+
+for (let i = 0; i < number; i++) {
+	if (((i+1) % 3) === 0) {
 		copyArr[i] *= 3;
 	}
 }
@@ -53,10 +56,13 @@ const sumStudent = student1['Mark'] + student2['Mark'] + student3['Mark'];
 
 let resultAvarege = sumStudent / 3;
 
-console.log(`Result avarege: ${resultAvarege.toFixed(1.5)}`); 
+console.log(`Result avarege: ${resultAvarege.toFixed(1.5)}`); // result avarege
 console.log(`student1: ${student1.Mark}, student2: ${student2.Mark}, student3: ${student3.Mark}`);
 
 
 for (let key in student1) {
 	console.log(`key: ${key}, value: ${student1[key]}`);
 }
+
+
+
