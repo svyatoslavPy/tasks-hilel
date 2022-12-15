@@ -62,7 +62,7 @@ const callText = (text) => {
 	return result;
 }
 
-console.log(textOutput('lorem'), callText());
+console.log(textOutput('lorem'), callText('lorem'));
 
 
 
