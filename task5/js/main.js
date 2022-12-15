@@ -32,16 +32,17 @@ filterArray(false, undefined, 'qwerty', 0, null);
 
 
 // task 3
-const calcSum = (a, b, ...args) => {
+const calcSum = (...args) => {
 
-	let result = a + b;
+	let result = 0;
+
 	for (let i = 0; i < args.length; i++) {
 		result += args[i];
 	}
 	return result;
 }
 
-console.log(calcSum(1, 2, 5));
+console.log(calcSum(1, 5, 2));
 
 
 
