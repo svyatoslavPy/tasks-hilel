@@ -17,7 +17,7 @@ console.log(fillArray(3, 'qwerty'));
 let filterArr = [0, 1, 2, null, undefined, 'qwerty', false];
 
 const filterArray = (a, b, c, d, e) => {
-	
+
 	for (let i = 0; i < filterArr.length; i++) {
 
 		if (filterArr[i] !== a && filterArr[i] !== b && filterArr[i] !== c && filterArr[i] !== d && filterArr[i] !== e) {
@@ -47,8 +47,15 @@ console.log(calcSum(1, 5, 2));
 
 
 // task 4
-const createPipe = (words) => { return `===== ${words} =====` }; 
-console.log(createPipe('some text you like'));
+function createPipe(simvol) {
+	return function (words) {
+		console.log(`${simvol} ${words} ${simvol}`);
+	}
+}
+
+const pipeFunction = createPipe('=====');
+console.log(pipeFunction('lorem'));
+
 
 
 
@@ -64,8 +71,4 @@ const callText = (text) => {
 }
 
 console.log(textOutput('lorem'), callText('lorem'));
-
-
-
-
 
