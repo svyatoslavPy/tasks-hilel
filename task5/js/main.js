@@ -1,4 +1,4 @@
-/*  My js tasks
+ /*  My js tasks
               .'  '. 
              :      :
              | _  _ |
@@ -15,7 +15,8 @@
      / /;:;:;:;\| |/:;:;:;:\ \   
     / /;:;:;:;:;\_/:;:;:;:;:\ \ */
 
-// task1
+
+// task1 
 const fillArray = (num, word) => {
 
 	let arr = [];
@@ -28,16 +29,21 @@ const fillArray = (num, word) => {
 
 console.log(fillArray(3, 'qwerty'));
 
+
+
 // task 2
 let filterArr = [0, 1, 2, null, undefined, 'qwerty', false];
-let deleteArr  = [0, 1, 2];
 
-const filterArray = (filterArr, deleteArr) => {
-	const resultFilter = filterArr.filter(item => deleteArr.includes(item));
-	return resultFilter;
+const filterArray = (...args) => {
+
+  return filterArr.filter(item => !args.includes(item));
+
 }
 
-console.log(filterArray(filterArr, deleteArr));
+console.log(filterArray(false, undefined, 'qwerty', 0, null));
+
+
+
 
 // task 3
 const calcSum = (...args) => {
@@ -52,6 +58,8 @@ const calcSum = (...args) => {
 
 console.log(calcSum(1, 5, 2));
 
+
+
 // task 4
 function createPipe(simvol) {
 	return function (words) {
@@ -61,6 +69,10 @@ function createPipe(simvol) {
 
 const pipeFunction = createPipe('=====');
 console.log(pipeFunction('lorem'));
+
+
+
+
 
 // task 5
 const textOutput = (text) => {
@@ -73,3 +85,4 @@ const callText = (text) => {
 }
 
 console.log(textOutput('lorem'), callText('lorem'));
+
