@@ -51,6 +51,14 @@ console.log(`arr 15 element: ${array}`);
 console.log(`Arr in which val multiplied by 2: ${modifiedArr}`);
 
 
+// task with an asterisk
+
+const arrayOne = ['dog', 'cat', 'bird', 'rabbit', 'horse'];
+
+const arrayTwo = ['apple', 'car', 'cat', 'ball', 'horse'];
+
+const findResult = arrayOne.filter(item => arrayTwo.includes(item));
+console.log(findresult);
 
 
 
