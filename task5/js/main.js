@@ -86,3 +86,4 @@ const callText = (text) => {
 
 console.log(textOutput('lorem'), callText('lorem'));
 
+
