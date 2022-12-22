@@ -59,7 +59,7 @@ const getStringElements = (array) => {
 getStringElements([1, true, 42, "red", 64, "green", "web", new Date(), -898, false]);
 
 
-// task recursian
+// task recursian - in the process
 // 2.1) 
 
 // const massive = [];
