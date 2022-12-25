@@ -76,8 +76,6 @@ getStringElements([1, true, 42, "red", 64, "green", "web", new Date(), -898, fal
 // 		sum += arr;
 // 	});
 // 	console.log(sum);
-	
-	
 // }
 
 // sumElem(massive);	
