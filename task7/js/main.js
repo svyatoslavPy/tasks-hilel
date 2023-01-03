@@ -35,9 +35,9 @@ const removeNegativeElements = (arr) => {
 	// }
   
 	// filter
-	console.log(arr.filter(item => item >= '0'));
+	return arr.filter(item => item >= 0);
 }
-removeNegativeElements([-9, 2, 3, 0, -28, 'value']);
+console.log(removeNegativeElements([-9, 2, 3, 0, -28, 'value']));
 
 
 
