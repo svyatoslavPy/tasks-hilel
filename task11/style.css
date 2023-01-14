@@ -1,0 +1,38 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.selected__inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 500px;
+	height: 500px;
+	border: 1px solid black;
+}
+
+.selected__title {
+	font-size: 30px;
+}
+
+.selected__block {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0px 0px 0px;
+	width: 350px;
+	height: 70px;
+	border: 1px solid black;
+	display: flex;
+	column-gap: 50px;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.btn__back {
+	margin-top: 20px;
+}
+
