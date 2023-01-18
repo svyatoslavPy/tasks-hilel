@@ -22,10 +22,12 @@
 	align-items: center;
 	margin: 10px 0px 0px 0px;
 	width: 350px;
-	height: 70px;
-	border: 1px solid black;
+	height: 80px;
+	/* border: 1px solid black; */
 	display: flex;
-	column-gap: 50px;
+	justify-content: space-between;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 .btn:hover {
@@ -36,3 +38,6 @@
 	margin-top: 20px;
 }
 
+.hide {
+	display: none;
+}

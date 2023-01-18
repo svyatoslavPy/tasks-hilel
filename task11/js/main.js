@@ -673,96 +673,46 @@ let objMain = `{
 }`
 
 const parsedData = JSON.parse(objMain); // распарсиваю json файл 
+const arrObj = [...Object.values(parsedData.results)]
 
-let arrObj = [...Object.values(parsedData.results)]
+let btnBack = document.querySelector('.btn__back'); // кнопка для возврата блоков
+let elem = document.querySelector(".wrap"); // wrapper 
+let resObjArr = arrObj.slice(0, 3); // обрезаем
 
-let res = {
-	id: '',
-	name: '',
-	status: ''
-};
-
-arrObj.filter(index => {
-	if (index.id == 1 && index.name == 'Rick Sanchez' && index.status == 'Alive') {
-		res.id = index.id;
-		res.name = index.name;
-		res.status = index.status;
-	}
-})
-
-console.log(res)
-
-let selectedTitle = document.querySelector('.selected__title');
-let btns = document.getElementsByClassName('btn');
-let btnsDelete = document.getElementsByClassName('btn__delete');
-let selectedInner = document.querySelector('.selected__inner');
-let divs = document.createElement("div");
-divs.classList.add('selected__block');
-
-
-const btnBack = document.querySelector('.btn__back');
-
-for (let key of btns) {
-	key.addEventListener('click', (e) => {
-		let resAttribute = e.target.getAttribute('btn-name');
-
-		if (resAttribute === null) {
-			selectedTitle.textContent = 'Selected: - - - - -';
-		} else {
-			selectedTitle.textContent = `Selected: ${res[resAttribute]}`;
-		}
-	})
-}
-
-
-const selectedList = {
-	delete: (element) => {
-		element.remove();
-	}
-}
-
-for (let i of btnsDelete) {
-	i.addEventListener('click', (e) => {
-		let resList = e.target;
-		let record = resList.getAttribute('btn-name');
-		if (record in selectedList) {
-			console.log(selectedList[record](resList.parentElement));
-		}
-	})
-}
-
-function deletes(e) {
-	let resList = e.target;
-	let record = resList.getAttribute('btn-name');
-	if (record in selectedList) {
-		console.log(selectedList[record](resList.parentElement));
-	}
-}
-
-
-btnBack.addEventListener('click', () => {
-	for (let i = 0; i < 3; i++) {
-		let divs = document.createElement("div");
-		selectedTitle.insertAdjacentElement("afterEnd", divs);
-		divs.classList.add('selected__block');
-		divs.innerHTML = `<p btn-name="id" class="btn">
-					id
+resObjArr.forEach((el) => {
+	elem.innerHTML += `<div class="selected__block">
+				<p>
+					${el.id}
 				</p>
-				<p btn-name="name" class="btn">
-					name
+				<p>
+					${el.name}
 				</p>
-				<p btn-name="status" class="btn">
-					status
+				<p>
+					${el.status}
 				</p>
-				<button onclick="deletes(event)" btn-name="delete" class="btn__delete">
+				<button class="btn__delete">
 					Delete
-				</button>`;
-		if (divs.childElementCount >= 3) {
-			btnBack.disabled = true;
-		} else {
-			btnBack.disabled = false;
+				</button>`
+})
+
+elem.childNodes.forEach(elem => {
+	elem.addEventListener('click', (event) => {
+		if (event.target.className === 'btn__delete') {
+			elem.classList.add('hide');
+		}
+	})
+})
+btnBack.addEventListener('click', () => {
+	for (let elems of elem.children) {
+		if (elems.classList.contains('hide')) {
+			elems.classList.remove('hide')
 		}
 	}
-
 })
+
+// elem.childNodes.forEach(elem => {
+// 	elem.addEventListener('click', () => {
+		
+// 	})	
+// })
 
