@@ -673,8 +673,9 @@ let objMain = `{
 }`
 
 const parsedData = JSON.parse(objMain); // распарсиваю json файл 
-const arrObj = [...Object.values(parsedData.results)]
+const arrObj = [...Object.values(parsedData.results)] // в массив обьектов
 
+let selectedTitle = document.querySelector('.selected__title'); // вывод имени
 let btnBack = document.querySelector('.btn__back'); // кнопка для возврата блоков
 let elem = document.querySelector(".wrap"); // wrapper 
 let resObjArr = arrObj.slice(0, 3); // обрезаем
@@ -695,10 +696,11 @@ resObjArr.forEach((el) => {
 				</button>`
 })
 
-elem.childNodes.forEach(elem => {
-	elem.addEventListener('click', (event) => {
+
+elem.childNodes.forEach(item => {
+	item.addEventListener('click', (event) => {
 		if (event.target.className === 'btn__delete') {
-			elem.classList.add('hide');
+			item.classList.add('hide');
 		}
 	})
 })
@@ -710,9 +712,17 @@ btnBack.addEventListener('click', () => {
 	}
 })
 
-// elem.childNodes.forEach(elem => {
-// 	elem.addEventListener('click', () => {
-		
-// 	})	
-// })
+
+let selected = undefined; // пусто
+elem.childNodes.forEach(item => {
+	item.addEventListener('click', (event) => {
+		selectedTitle.innerHTML = arrObj[0].name;
+		console.log(event);
+		if (selected) {
+			selected.classList.remove('primary');
+		}
+		selected = event.target;
+		event.target.classList.add('primary');
+	})
+})
 
