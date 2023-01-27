@@ -39,10 +39,12 @@ function createDice() {
 	})
 	return createDicePromice;
 }
-let promice = createDice();
 
 function createThreePromice() {
-	Promise.all([promice, promice, promice])
+	let p1 = createDice();
+	let p2 = createDice();
+	let p3 = createDice();
+	Promise.all([p1, p2, p3])
 		.then(() => {
 			console.log('You are lucky');
 		})
