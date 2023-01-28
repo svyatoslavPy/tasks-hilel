@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="reset.css">
+	<title>Document</title>
+
+	<style>
+		.date {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.btn__wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 10px 0px 0px 0px;
+			column-gap: 50px;
+		}
+
+		.btn {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 120px;
+			height: 50px;
+			border: 1px solid black;
+			border-radius: 50px;
+		}
+
+		.btn:hover {
+			cursor: pointer;
+		}
+
+
+		p {
+			margin-bottom: 25px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="date"></div>
+	<div class="btn__wrapper">
+		<div id="btn-prev" class="btn">Previous</div>
+		<div class="current-page">Current page</div>
+		<div id="btn-next" class="btn">Next</div>
+	</div>
+
+
+
+	<script src="js/main.js"></script>
+</body>
+
+</html>

@@ -681,7 +681,7 @@ let elem = document.querySelector(".wrap"); // wrapper
 let resObjArr = arrObj.slice(0, 3); // обрезаем
 
 resObjArr.forEach((el) => {
-	elem.innerHTML += `<div class="selected__block">
+	elem.innerHTML += `<div div-name="${el.name}" class="selected__block">
 				<p>
 					${el.id}
 				</p>
@@ -701,6 +701,7 @@ elem.childNodes.forEach(item => {
 	item.addEventListener('click', (event) => {
 		if (event.target.className === 'btn__delete') {
 			item.classList.add('hide');
+			selectedTitle.innerHTML = `Selected: - - - - -`;
 		}
 	})
 })
@@ -712,12 +713,14 @@ btnBack.addEventListener('click', () => {
 	}
 })
 
-
 let selected = undefined; // пусто
 elem.childNodes.forEach(item => {
 	item.addEventListener('click', (event) => {
-		selectedTitle.innerHTML = arrObj[0].name;
-		console.log(event);
+		let resHand = event.target.getAttribute("div-name");
+		
+		if (resHand !== null) {
+			selectedTitle.innerHTML = `Selected: ${resHand}`;
+		}
 		if (selected) {
 			selected.classList.remove('primary');
 		}
