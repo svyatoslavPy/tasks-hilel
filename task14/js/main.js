@@ -1,23 +1,45 @@
 const wrapper = document.querySelector('.date');
+// date 
 const btnPrev = document.getElementById('btn-prev');
+// btn-prev
 const btnNext = document.getElementById('btn-next');
+// btn-next
 
-async function getDate() {
-	const responce = await fetch(`https://rickandmortyapi.com/api/character?page=1`)
-	const date = await responce.json();
+const currentPages = document.querySelector('.current-page'); // текущая странница 
 
-
-	// btnNext.addEventListener('click', () => {
-	// 	console.log(date.info.next);
-	// })
+async function getDate(link) {
+	let responce = await fetch(link);
+	let date = await responce.json();
 
 	date.results.forEach(item => {
 		wrapper.innerHTML += `<p>${item.name}</p>
-    <p>${item.status}</p>`;
+		<p>${item.status}</p>`;
 	})
 }
 
-getDate();
+let currentPage = 1; // текущая странница(счётчик)
+
+getDate(`https://rickandmortyapi.com/api/character?page=1`);
+
+btnPrev.addEventListener('click', () => {
+	wrapper.innerHTML = "";
+	if (currentPage > 1) {
+		currentPage--;
+	}
+	getDate(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
+	const urlParams = new URL(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
+	const page = urlParams.searchParams.get('page')
+	currentPages.innerHTML = page;
+})
+
+btnNext.addEventListener('click', () => {
+	wrapper.innerHTML = "";
+	currentPage++;
+	getDate(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
+	const urlParams = new URL(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
+	const page = urlParams.searchParams.get('page')
+	currentPages.innerHTML = page;
+})
 
 
 
