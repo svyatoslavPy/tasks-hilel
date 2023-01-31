@@ -9,10 +9,34 @@
 	<title>Document</title>
 
 	<style>
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+		}
+
 		.date {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			margin: 20px 0px 0px 0px;
+		}
+
+		.date-btn {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 50%;
+			height: 40px;
+			padding-left: 20px;
+			padding-right: 20px;
+			background: rgb(221, 231, 238);
+			border: 1px solid black;
+			transition: 0.3s;
+		}
+
+		.date-btn:hover {
+			background: rgb(153, 168, 179);
+			transition: 0.3s;
+			cursor: pointer;
 		}
 
 		.btn__wrapper {
@@ -29,24 +53,21 @@
 			align-items: center;
 			width: 120px;
 			height: 50px;
-			border: 1px solid black;
+			background: rgb(221, 231, 238);
+			border: 1px solid gray;
 			border-radius: 50px;
 		}
 
 		.btn:hover {
 			cursor: pointer;
 		}
-
-
-		p {
-			margin-bottom: 25px;
-		}
 	</style>
 </head>
 
 <body>
 
-	<div class="date"></div>
+	<div class="date">
+	</div>
 	<div class="btn__wrapper">
 		<div id="btn-prev" class="btn">Previous</div>
 		<div class="current-page">1</div>

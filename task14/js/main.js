@@ -12,8 +12,9 @@ async function getDate(link) {
 	let date = await responce.json();
 
 	date.results.forEach(item => {
-		wrapper.innerHTML += `<p>${item.name}</p>
-		<p>${item.status}</p>`;
+		wrapper.innerHTML += `
+			<div class="date-btn"><p>${item.id}</p><p>${item.name}</p><p>${item.status}</p></div>
+	`	;
 	})
 }
 
@@ -26,6 +27,11 @@ btnPrev.addEventListener('click', () => {
 	if (currentPage > 1) {
 		currentPage--;
 	}
+
+	// if (currentPage < 42) {
+	// 	btnNext.disabled = false;
+	// }
+
 	getDate(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
 	const urlParams = new URL(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
 	const page = urlParams.searchParams.get('page')
@@ -35,6 +41,11 @@ btnPrev.addEventListener('click', () => {
 btnNext.addEventListener('click', () => {
 	wrapper.innerHTML = "";
 	currentPage++;
+
+	// if (currentPage >= 42) {
+	// 	btnNext.disabled = true;
+	// }
+
 	getDate(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
 	const urlParams = new URL(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
 	const page = urlParams.searchParams.get('page')
