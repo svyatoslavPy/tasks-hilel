@@ -28,9 +28,9 @@ btnPrev.addEventListener('click', () => {
 		currentPage--;
 	}
 
-	// if (currentPage < 42) {
-	// 	btnNext.disabled = false;
-	// }
+	if (currentPage < 42) {
+		btnNext.disabled = false;
+	}
 
 	getDate(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
 	const urlParams = new URL(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
@@ -42,9 +42,9 @@ btnNext.addEventListener('click', () => {
 	wrapper.innerHTML = "";
 	currentPage++;
 
-	// if (currentPage >= 42) {
-	// 	btnNext.disabled = true;
-	// }
+	if (currentPage >= 42) {
+		btnNext.disabled = true;
+	}
 
 	getDate(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
 	const urlParams = new URL(`https://rickandmortyapi.com/api/character?page=${currentPage}`);
