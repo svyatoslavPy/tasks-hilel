@@ -4,7 +4,6 @@ const btnPrev = document.getElementById('btn-prev');
 // btn-prev
 const btnNext = document.getElementById('btn-next');
 // btn-next
-
 const currentPages = document.querySelector('.current-page'); // текущая странница 
 
 async function getDate(link) {
@@ -18,12 +17,16 @@ async function getDate(link) {
 	})
 }
 
+function clearDate() {
+	wrapper.innerHTML = "";
+}
+
 let currentPage = 1; // текущая странница(счётчик)
 
 getDate(`https://rickandmortyapi.com/api/character?page=1`);
 
 btnPrev.addEventListener('click', () => {
-	wrapper.innerHTML = "";
+	clearDate()
 	if (currentPage > 1) {
 		currentPage--;
 	}
@@ -39,7 +42,7 @@ btnPrev.addEventListener('click', () => {
 })
 
 btnNext.addEventListener('click', () => {
-	wrapper.innerHTML = "";
+	clearDate()
 	currentPage++;
 
 	if (currentPage >= 42) {
