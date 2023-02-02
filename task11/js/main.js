@@ -724,8 +724,11 @@ elem.childNodes.forEach(item => {
 		if (selected) {
 			selected.classList.remove('primary');
 		}
+		
 		selected = event.target;
-		event.target.classList.add('primary');
+		if (event.target.classList.contains('selected__block')) {
+			event.target.classList.add('primary');
+		}
 	})
 })
 
