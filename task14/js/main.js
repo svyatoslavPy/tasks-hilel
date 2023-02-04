@@ -6,16 +6,19 @@ const btnNext = document.getElementById('btn-next');
 // btn-next
 const currentPages = document.querySelector('.current-page'); // текущая странница 
 
+let pagesLenght = {};
+
 async function getDate(link) {
 	let responce = await fetch(link);
 	let date = await responce.json();
-
+	pagesLenght = date.info.pages; // pages
 	date.results.forEach(item => {
 		wrapper.innerHTML += `
 			<div class="date-btn"><p>${item.id}</p><p>${item.name}</p><p>${item.status}</p></div>
 	`	;
 	})
 }
+
 
 function clearDate() {
 	wrapper.innerHTML = "";
@@ -31,7 +34,7 @@ btnPrev.addEventListener('click', () => {
 		currentPage--;
 	}
 
-	if (currentPage < 42) {
+	if (currentPage < pagesLenght) {
 		btnNext.disabled = false;
 	}
 
@@ -45,7 +48,7 @@ btnNext.addEventListener('click', () => {
 	clearDate()
 	currentPage++;
 
-	if (currentPage >= 42) {
+	if (currentPage >= pagesLenght) {
 		btnNext.disabled = true;
 	}
 
