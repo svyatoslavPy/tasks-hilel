@@ -14,15 +14,14 @@ const valueRadioBtn = {
 
 async function getСharacter() {
 	try {
-		const responce = await fetch('https://rickandmortyapi.com/api/character');
+		const responce = await fetch(`https://rickandmortyapi.com/api/character/?name=${inputSearch.value}&status=${valueRadioBtn.value}`);
 		const date = await responce.json();
+		console.log(date)
 		date.results.forEach(item => {
-			if (item.name === inputSearch.value && item.status === valueRadioBtn.value) {
-				resultSearch.innerHTML = `
+			resultSearch.innerHTML = `
 				<p>id: ${item.id}</p>, <p>name: ${item.name}</p>, <p>status: ${item.status}</p>, <p>species: ${item.species}</p>`;
-				resultSearch.setAttribute("div-name", `${item.name}`)
-				resultSearch.setAttribute("div-picture", `${item.image}`)
-			}
+			resultSearch.setAttribute("div-name", `${item.name}`)
+			resultSearch.setAttribute("div-picture", `${item.image}`)
 		})
 	} catch (err) {
 		console.log('Request failed')
@@ -45,7 +44,7 @@ searchBtn.addEventListener('click', () => {
 resultSearch.addEventListener('click', (e) => {
 	valueRadioBtn.name = e.target.getAttribute("div-name");
 	valueRadioBtn.picture = e.target.getAttribute("div-picture");
-	
+
 	inputWrapper.classList.add('input__wrapper--special');
 	modal.classList.add('modal--primary');
 
