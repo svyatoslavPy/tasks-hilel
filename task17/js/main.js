@@ -60,7 +60,7 @@ const objPlaneThree = {
 };
 
 airport.planes.push(objPlaneOne, objPlaneTwo, objPlaneThree); // add obj in planes []
-objPlaneOne.copyInfoPlaneOne.isFlying = true;
+objPlaneOne.copyInfoPlaneOne.takeOff();
 console.log(airport.getFlyingPlanes());
 
 
@@ -68,7 +68,6 @@ btn.addEventListener('click', () => {
 	airport.planes.push(airport.getFlyingPlanes());
 	console.log(airport.getFlyingPlanes());
 })
-
 
 let date = 2023; // right now date 
 
