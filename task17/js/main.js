@@ -69,7 +69,7 @@ btn.addEventListener('click', () => {
 	console.log(airport.getFlyingPlanes());
 })
 
-let date = 2023; // right now date 
+
 
 class User {
 	constructor(name, surname) {
@@ -82,6 +82,7 @@ class Student extends User {
 	constructor(name, surname, year) { // year = год поступление
 		super(name, surname);
 		this.year = year;
+		this.date = 2023;
 	}
 
 	getFullName() {
@@ -89,7 +90,7 @@ class Student extends User {
 	}
 
 	getCourse() {
-		return date -= this.year;
+		return this.date -= this.year;
 	}
 }
 
