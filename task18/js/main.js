@@ -72,7 +72,9 @@ function Student(year) {
 
 const student = new Student(2020);
 student.__proto__ = user;	
+
 console.log(student.getFullName());
+console.log(student.getCourse());
 
 String.prototype.countAllUpperCase = function() {
 	let amountUpperCase = 0;
