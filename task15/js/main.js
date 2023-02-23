@@ -9,7 +9,7 @@ const modal = document.querySelector('.modal');
 const valueRadioBtn = {
 	value: '',
 	name: '',
-	picture: ''
+	picture: ''	
 };
 
 async function getСharacter() {
